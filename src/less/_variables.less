@@ -1,0 +1,47 @@
+// colors
+
+@main-color: #ffffff;
+@dark-color: #49274A;
+@secondary-color: #ffe8e0;
+@accent-color: #498077;
+@font-color: @main-color;
+@main-btn-color: #df4e4e;
+@hashtag-color: #e5da74;
+
+
+@active-slider-btn: @main-color;
+@inactive-slider-btn: rgba(211, 88, 213, 0.59);
+
+@bg-gradient: linear-gradient(180deg, #3f004a 0%, rgba(97, 2, 114, 0) 21.21%),
+  #610272;
+
+// typography
+
+@main-font: "Montserrat", sans-serif;
+@product-font: "Montserrat Alternates", sans-serif;
+
+
+@main-title-size: 2em;
+@title-size: 1.7em;
+@text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+// flexbox
+
+.h-flex(@justify-content: space-between, @align-items: center) {
+  display: flex;
+  justify-content: @justify-content;
+  align-items: @align-items;
+}
+
+.v-flex(@justify-content: center, @align-items: center) {
+  display: flex;
+  flex-direction: column;
+  justify-content: @justify-content;
+  align-items: @align-items;
+}
+
+.padding {
+  @pd: 2.5rem;
+  padding-top: @pd;
+  padding-bottom: @pd;
+}
