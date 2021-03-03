@@ -2,8 +2,8 @@
   <div id="app">
     <the-header>
       <logo></logo>
-      <nav-links></nav-links>
-      <menu-button></menu-button>
+      <menu-links v-show-at:pc></menu-links>
+      <menu-button v-show-at:mobile></menu-button>
     </the-header>
     <section class="hero-section">
       <div class="container">
@@ -113,7 +113,7 @@
 <script>
 import TheHeader from "@/components/TheHeader";
 import Logo from "@/components/Logo";
-import Navlinks from "@/components/NavLinks";
+import Menulinks from "@/components/MenuLinks";
 import MenuButton from "@/components/MenuButton";
 import BaseButton from "@/components/BaseButton";
 import Carousel from "@/components/Carousel";
@@ -126,18 +126,18 @@ import TheFooter from "@/components/TheFooter";
 
 export default {
   components: {
-    "the-header": TheHeader,
-    logo: Logo,
-    "nav-links": Navlinks,
-    "menu-button": MenuButton,
-    carousel: Carousel,
-    "base-button": BaseButton,
-    product: Product,
-    "carousel-nav": CarouselNav,
-    "carousel-nav-button": CarouselNavButton,
-    "social-media": SocialMedia,
-    "contact-form": ContactForm,
-    "the-footer": TheFooter,
+    TheHeader,
+    Logo,
+    "menu-links": Menulinks,
+    MenuButton,
+    Carousel,
+    BaseButton,
+    Product,
+    CarouselNav,
+    CarouselNavButton,
+    SocialMedia,
+    ContactForm,
+    TheFooter,
   },
 };
 </script>
