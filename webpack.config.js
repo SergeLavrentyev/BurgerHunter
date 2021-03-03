@@ -1,5 +1,6 @@
 const VueLoaderPlagin = require("vue-loader/lib/plugin");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { resolve } = require("path");
 
 module.exports = {
@@ -26,6 +27,7 @@ module.exports = {
         test: /\.less$/,
         use: [
           "vue-style-loader",
+          MiniCssExtractPlugin.loader,
           {
             loader: "css-loader",
             options: {
@@ -61,10 +63,12 @@ module.exports = {
     host: "0.0.0.0",
   },
   plugins: [
+    new MiniCssExtractPlugin(),
     new VueLoaderPlagin(),
     new HTMLWebpackPlugin({
       filename: "index.html",
       template: resolve(__dirname, "src", "public", "index.html"),
+      minify: false,
       publicPath: "/",
     }),
   ],

@@ -9,7 +9,6 @@
 
 .carousel {
   .v-flex();
-  width: 100%;
   .padding();
   background-image: radial-gradient(
     40% 40% at center 39%,

@@ -15,3 +15,18 @@ export default {
   mixins: [navLinks]
 };
 </script>
+
+<style lang="less">
+@import (reference) "@/less/_variables.less";
+.nav {
+  max-width: 25rem;
+  width: 100%;
+  &-list {
+    .h-flex();
+    &__link {
+      font-size: 1.2em;
+    }
+  }
+  
+}
+</style>

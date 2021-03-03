@@ -7,24 +7,28 @@
     </the-header>
     <section class="hero-section">
       <div class="container">
-        <div class="hero-section__content">
-          <h1 class="hero-section__title">burger hunter</h1>
-          <p class="hero-section__subtitle">Бургер-Бар из Тольятти</p>
-          <p class="hero-section__text">
-            Присоединяйся к нам, и попробуй настоящие бургеры!!!
-          </p>
-          <base-button class="hero-section__button"> Заказать </base-button>
+        <div class="row">
+          <div
+            class="hero-section__content col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12"
+          >
+            <h1 class="hero-section__title">burger hunter</h1>
+            <p class="hero-section__subtitle">Бургер-Бар из Тольятти</p>
+            <p class="hero-section__text">
+              Присоединяйся к нам, и попробуй настоящие бургеры!!!
+            </p>
+            <base-button class="hero-section__button"> Заказать </base-button>
+          </div>
+          <carousel class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <product></product>
+            <carousel-nav>
+              <carousel-nav-button
+                v-for="(button, index) in 5"
+                :key="button"
+                :class="index === 0 ? 'carousel-nav__button--active' : ''"
+              ></carousel-nav-button>
+            </carousel-nav>
+          </carousel>
         </div>
-        <carousel>
-          <product></product>
-          <carousel-nav>
-            <carousel-nav-button
-              v-for="(button, index) in 5"
-              :key="button"
-              :class="index === 0 ? 'carousel-nav__button--active' : ''"
-            ></carousel-nav-button>
-          </carousel-nav>
-        </carousel>
       </div>
     </section>
     <section class="about-us">
@@ -145,6 +149,8 @@ export default {
 
 <style lang="less">
 @import (reference) "@/less/_variables.less";
+@import "@/less/_grid.less";
+
 .hero-section {
   padding-top: 5rem;
   color: @font-color;
@@ -295,6 +301,7 @@ export default {
   background-size: cover;
 
   .form-wrapper {
+    margin: 0 auto;
     .padding();
     padding-left: 2rem;
     padding-right: 2rem;

@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;
+}
+
+@size-xl: 76.25rem; // ~1220px 
+@size-lg: 62.5rem; // ~1000px
+@size-md: 48rem;  // ~768px
+@size-sm: 36rem;  // 576px
+
+@gutter: 1.25rem;
+
+
+.media-interval(@min, @max, @rules) {
+  @media (min-width: (@min + 0.0625)) and (max-width: @max) {
+    @rules();
+  }
+}
+
+.media-interval(@size-xl, 652rem, {
+  .create-grid(xl)
+});
+
+.media-interval(@size-lg, @size-xl, {
+  .create-grid(lg)
+});
+
+.media-interval(@size-md, @size-lg, {
+  .create-grid(md)
+});
+
+.media-interval(@size-sm, @size-md, {
+  .create-grid(sm)
+});
+
+.media-interval(0, @size-sm, {
+  .create-grid(xs)
+});
+
+
+.create-grid(@type, @i: 1, @cols: 12) when (@i <= @cols) {
+  .col-@{type}-@{i} {
+    width: (100% / @cols) * @i;
+  }
+  .skip-@{type}-@{i} {
+    margin-right: (100% / @cols) * @i;
+  }
+  .add-@{type}-@{i} {
+    margin-left: (100% / @cols) * @i;
+  }
+  .create-grid(@type, (@i + 1), @cols);
+};
+
+ul {
+  padding: 0;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 (-@gutter / 2);
+}
+
+.col {
+  flex: 1 1 0;
+}
+
+li[class*="col"] {
+  padding-top: @gutter;
+  padding-right: (@gutter / 2);
+  padding-left: (@gutter / 2);
+}
+
+li {
+  list-style-type: none;
+  color:rgba(0, 255, 255, 0.5);
+}
+

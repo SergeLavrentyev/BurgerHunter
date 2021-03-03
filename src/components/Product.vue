@@ -3,6 +3,7 @@
     <img
       class="product__image"
       alt="carousel-product"
+      src="../assets/images/burger.png"
     />
     <div class="product__description">
       <h2 class="product__title">Чики дог</h2>
@@ -14,6 +15,14 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    
+  }
+}
+</script>
 
 <style lang="less">
 @import (reference) "@/less/_variables.less";
